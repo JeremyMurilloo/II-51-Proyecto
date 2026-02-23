@@ -1,0 +1,53 @@
+classDiagram
+direction RL
+
+%%Jeremy Trejos Murillo / 4-0261-0848
+
+
+class Usuario{
+  +String id_Usuario
+  +String nombre
+  +String email
+  +String password
+  +String telefono
+  +String rol
+}
+
+class Casillero{
+  +String id_Casillero
+  +String codigoCasillero
+  +String direccion_Miami
+  +String estado
+}
+
+class Paquete{
+  +String id_Paquete
+  +String descripcion
+  +double peso
+  +double valorDeclarado
+  +String trackingExterno
+  +String estadoPaquete
+}
+
+class Envio{
+  +String id_Envio
+  +String nombre_Remitente
+  +String nombre_Destinatario
+  +Date fecha_Envio
+  +Date fecha_Entrega
+  +String estado_Envio
+}
+
+class Rastreo{
+  +String id_Rastreo
+  +DateTime fechaHora
+  +String ubicacion
+  +String estado
+  +String detalle
+}
+
+
+Usuario "1" -- "1" Casillero : tiene >
+Casillero "1" -- "0..*" Paquete : contiene >
+Envio "1" -- "1..*" Paquete : incluye >
+Envio "1" *-- "0..*" Rastreo : registra >
