@@ -260,6 +260,20 @@ main {
   margin: 0;
 }
 
+.resultado-box {
+  margin-top: 15px;
+  background-color: #162a5a;   
+  color: white;
+  padding: 12px;
+  border-radius: 10px;
+  min-height: 45px;
+  display: flex;
+  align-items: center;
+  font-size: 0.95rem;
+  
+}
+
+
 /* ----------------------  FAQ ---------------------- */
 .faq {
   background: var(--color-white);
@@ -303,3 +317,4 @@ main {
     grid-template-columns: 1fr;
   }
 }
+

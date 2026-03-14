@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Usuario</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1 class="title">Registro de Usuario</h1>
+    </header>
+
+    <main>
+
+        <section class="form-box">
+
+            <h3 class="section-title">Crear cuenta</h3>
+
+            <form id="formRegistro">
+
+                <label>Nombre</label>
+                <input class="form-input input-dark" type="text" id="nombre" required>
+
+                <label>Correo</label>
+                <input class="form-input input-dark" type="email" id="correo" required>
+
+                <label>Contraseña</label>
+                <input class="form-input input-dark" type="password" id="password" required>
+
+                <label>Teléfono</label>
+                <input class="form-input input-dark" type="text" id="telefono">
+
+                <label>Dirección</label>
+                <input class="form-input input-dark" type="text" id="direccion">
+
+                <button class="submit-button" type="submit">
+                    Registrarse
+                </button>
+
+            </form>
+
+            <div id="mensajeRegistro" style="margin-top:15px;"></div>
+
+        </section>
+
+    </main>
+
+    <script type="module">
+
+        import { supabase } from "./supabase.js";
+
+        const form = document.getElementById("formRegistro");
+
+        form.addEventListener("submit", async function (e) {
+
+            e.preventDefault();
+
+            let nombre = document.getElementById("nombre").value;
+            let correo = document.getElementById("correo").value;
+            let password = document.getElementById("password").value;
+            let telefono = document.getElementById("telefono").value;
+            let direccion = document.getElementById("direccion").value;
+
+            /* verificar si ya existe */
+            const { data: existe } = await supabase
+                .from("usuarios")
+                .select("correo")
+                .eq("correo", correo);
+
+            if (existe.length > 0) {
+
+                document.getElementById("mensajeRegistro").innerHTML =
+                    "<span style='color:red'>Este correo ya está registrado</span>";
+
+                return;
+            }
+
+            /* insertar usuario */
+            const { error } = await supabase
+                .from("usuarios")
+                .insert([
+                    {
+                        nombre: nombre,
+                        correo: correo,
+                        password: password,
+                        telefono: telefono,
+                        direccion: direccion
+                    }
+                ]);
+
+            if (error) {
+
+                document.getElementById("mensajeRegistro").innerHTML =
+                    "<span style='color:red'>Error al registrar</span>";
+
+            } else {
+
+                document.getElementById("mensajeRegistro").innerHTML =
+                    "<span style='color:green'>Usuario creado correctamente</span>";
+
+                setTimeout(() => {
+                    window.location.href = "login.html";
+                }, 1500);
+
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>
