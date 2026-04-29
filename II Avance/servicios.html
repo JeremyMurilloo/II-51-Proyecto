@@ -33,7 +33,7 @@
         <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
           <li class="nav-item"><a class="nav-link fw-semibold" href="index.html">Inicio</a></li>
           <li class="nav-item"><a class="nav-link fw-semibold" href="#servicios">Servicios</a></li>
-          <li class="nav-item"><a class="nav-link fw-semibold" href="#tarifas">Tarifas</a></li>
+          <li class="nav-item"><a class="nav-link fw-semibold" href="tarifas.html">Tarifas</a></li>
           <li class="nav-item"><a class="nav-link fw-semibold" href="#faq">FAQ</a></li>
           <li class="nav-item"><a class="nav-link fw-semibold" href="#contacto">Contacto</a></li>
           <!-- Se llena dinamicamente segun sesion -->
@@ -106,101 +106,6 @@
     </section>
 
     <hr class="section-divider">
-
-    <!-- Tarifas y tabla de costos -->
-    <section class="section-wrap" id="tarifas">
-      <p class="section-label text-center">Precios claros</p>
-      <h2 class="section-heading text-center mb-5">Tarifas de envio</h2>
-
-      <div class="row g-4 mb-5">
-        <div class="col-12 col-md-4">
-          <div class="tarifa-card text-center">
-            <p class="tarifa-label">Tarifa base por kg</p>
-            <p class="tarifa-precio">$8.50</p>
-            <p class="text-muted small">Se cobra el mayor entre peso real y peso volumetrico.</p>
-          </div>
-        </div>
-        <div class="col-12 col-md-4">
-          <div class="tarifa-card text-center">
-            <p class="tarifa-label">Minimo por envio</p>
-            <p class="tarifa-precio">$12.00</p>
-            <p class="text-muted small">Aplica aunque el peso calculado sea menor.</p>
-          </div>
-        </div>
-        <div class="col-12 col-md-4">
-          <div class="tarifa-card text-center">
-            <p class="tarifa-label">Seguro opcional</p>
-            <p class="tarifa-precio">2%</p>
-            <p class="text-muted small">Del valor declarado. Aplica para compras mayores a $100.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Tabla de costos por peso -->
-      <h5 class="fw-bold mb-3" style="color:var(--color-primary-dark)">Tabla de costos estimados por peso</h5>
-      <div class="table-responsive">
-        <table class="table tabla-tarifas">
-          <thead>
-            <tr>
-              <th>Peso (kg)</th>
-              <th>Costo de envio</th>
-              <th>Con seguro ($100)</th>
-              <th>Con seguro ($200)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>Hasta 1.4 kg</td><td>$12.00</td><td>$14.00</td><td>$16.00</td></tr>
-            <tr><td>1.5 kg</td><td>$12.75</td><td>$14.75</td><td>$16.75</td></tr>
-            <tr><td>2.0 kg</td><td>$17.00</td><td>$19.00</td><td>$21.00</td></tr>
-            <tr><td>3.0 kg</td><td>$25.50</td><td>$27.50</td><td>$29.50</td></tr>
-            <tr><td>5.0 kg</td><td>$42.50</td><td>$44.50</td><td>$46.50</td></tr>
-            <tr><td>10.0 kg</td><td>$85.00</td><td>$87.00</td><td>$89.00</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="hint mt-2">Peso volumetrico = (Largo x Ancho x Alto) / 5000. Se cobra el mayor entre peso real y volumetrico.</p>
-    </section>
-
-    <hr class="section-divider">
-
-    <!-- Estimador de envio -->
-    <div class="estimator-wrap" id="estimador">
-      <div class="section-wrap">
-        <p class="section-label text-center">Calcula tu costo</p>
-        <h2 class="section-heading text-center mb-5">Estimador de envio</h2>
-
-        <form class="form-estimator estimator-form" id="formEstimador">
-          <div class="row g-3 mb-3">
-            <div class="col-12 col-md-6">
-              <label class="form-label fw-semibold">Peso (kg)</label>
-              <input class="form-control input-dark" type="number" id="peso" step="0.1" required>
-            </div>
-            <div class="col-12 col-md-6">
-              <label class="form-label fw-semibold">Valor declarado (USD)</label>
-              <input class="form-control input-dark" type="number" id="valor" required>
-            </div>
-          </div>
-          <div class="row g-3 mb-3">
-            <div class="col-4">
-              <label class="form-label fw-semibold">Largo (cm)</label>
-              <input class="form-control input-dark" type="number" id="largo">
-            </div>
-            <div class="col-4">
-              <label class="form-label fw-semibold">Ancho (cm)</label>
-              <input class="form-control input-dark" type="number" id="ancho">
-            </div>
-            <div class="col-4">
-              <label class="form-label fw-semibold">Alto (cm)</label>
-              <input class="form-control input-dark" type="number" id="alto">
-            </div>
-          </div>
-          <p class="hint mb-3">Peso volumetrico = (L x A x H) / 5000. Se cobra el mayor entre peso real y volumetrico.</p>
-          <button class="btn btn-primary w-100 fw-bold py-2" type="submit">Estimar costo</button>
-        </form>
-
-        <div id="estimador-resultado" class="resultado-box estimador-resultado-centrado"></div>
-      </div>
-    </div>
 
     <hr class="section-divider">
 
@@ -352,7 +257,7 @@
         <ul>
           <li><a href="index.html" class="footer-link">Inicio</a></li>
           <li><a href="#servicios" class="footer-link">Servicios</a></li>
-          <li><a href="#tarifas" class="footer-link">Tarifas</a></li>
+          <li><a href="tarifas.html" class="footer-link">Tarifas</a></li>
           <li><a href="rastreo.html" class="footer-link">Rastrear envio</a></li>
         </ul>
       </div>
@@ -372,8 +277,6 @@
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Estimador -->
-  <script src="main.js"></script>
   <!-- Logica de servicios -->
   <script src="servicios.js"></script>
 
