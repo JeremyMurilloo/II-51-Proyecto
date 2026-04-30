@@ -183,6 +183,45 @@
     </div>
   </footer>
 
+  <!-- Modal Editar Pre-alerta -->
+  <div class="modal fade" id="modalEditarPrealerta" tabindex="-1" aria-labelledby="modalEditarLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalEditarLabel">✏️ Editar Pre-alerta</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <input type="hidden" id="edit_id_prealerta">
+          <div id="mensajeEditar"></div>
+          <div class="mb-3">
+            <label class="form-label fw-semibold">Número de Tracking</label>
+            <input type="text" class="form-control" id="edit_numero_tracking">
+          </div>
+          <div class="mb-3">
+            <label class="form-label fw-semibold">Descripción del producto</label>
+            <input type="text" class="form-control" id="edit_descripcion_producto">
+          </div>
+          <div class="mb-3">
+            <label class="form-label fw-semibold">Proveedor / Tienda</label>
+            <input type="text" class="form-control" id="edit_proveedor_tienda">
+          </div>
+          <div class="mb-3">
+            <label class="form-label fw-semibold">Valor declarado (USD)</label>
+            <div class="input-group">
+              <span class="input-group-text bg-dark text-white border-0">$</span>
+              <input type="number" class="form-control" id="edit_valor_declarado" step="0.01" min="0">
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary" id="btnGuardarEdicion">Guardar cambios</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Lógica de pre-alerta -->
